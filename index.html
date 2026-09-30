@@ -19,14 +19,14 @@
 <body>
     
     <script>
-        // 1. Memblokir Klik Kanan (Context Menu)
+       
         document.addEventListener('contextmenu', function(event) {
             event.preventDefault();
         });
 
-        // 2. Memblokir Shortcut Keyboard untuk Inspect Element dan View Source
+       
         document.addEventListener('keydown', function(e) {
-            // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
+            
             if (
                 e.key === 'F12' || 
                 (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) || 
@@ -37,21 +37,18 @@
             }
         });
 
-        // 3. Obfuscate URL menggunakan Base64
-        // String di bawah ini adalah representasi Base64 dari "https://pbc.ac.id"
-        // Ganti string ini dengan hasil encode dari website Anda sendiri
         var _0xUrl = 'aHR0cHM6Ly9wYmMuYWMuaWQ='; 
         
-        // 4. Membangun dan menyisipkan iframe secara dinamis
+     
         var _0xIframe = document.createElement('iframe');
         
-        // Decode Base64 kembali menjadi URL yang valid
+      
         _0xIframe.src = atob(_0xUrl); 
         
-        // Atur gaya iframe agar menutupi seluruh layar secara absolut
+
         _0xIframe.style.cssText = 'position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;';
         
-        // Tambahkan iframe ke dalam body
+    
         document.body.appendChild(_0xIframe);
     </script>
 </body>
