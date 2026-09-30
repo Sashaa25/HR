@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Website</title>
+    
+    <style>
+        /* Menghilangkan semua margin, padding dasar, dan mencegah scroll pada halaman utama */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Mencegah munculnya scrollbar di layar utama */
+            background-color: #ffffff; /* Warna background cadangan */
+        }
+
+        /* Memastikan iframe memenuhi 100% layar tanpa border */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block; /* Menghilangkan ruang kosong kecil di bawah iframe */
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 
+        ===========================================================
+        MASUKKAN URL WEBSITE ANDA PADA ATRIBUT "src" DI BAWAH INI
+        Contoh: src="https://nama-website-anda.com"
+        ===========================================================
+    -->
+    <iframe src="https://pbc.ac.id" title="Embedded Content"></iframe>
+    
+</body>
+</html>
