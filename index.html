@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Internal</title>
     
+    <!-- Meta tag untuk mencegah caching browser -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <style>
         html, body {
             margin: 0;
@@ -19,14 +24,13 @@
 <body>
     
     <script>
-       
+        // Blokir klik kanan
         document.addEventListener('contextmenu', function(event) {
             event.preventDefault();
         });
 
-       
+        // Blokir shortcut developer tools (F12, Ctrl+U, dll)
         document.addEventListener('keydown', function(e) {
-            
             if (
                 e.key === 'F12' || 
                 (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) || 
@@ -39,16 +43,18 @@
 
         var _0xUrl = 'aHR0cHM6Ly90cmFpbmluZy1hcHAtMjkyNS0zOTc1NTAxMDY5NTYuYXNpYS1zb3V0aGVhc3QxLnJ1bi5hcHAv'; 
         
-     
-        var _0xIframe = document.createElement('iframe');
-        
-      
-        _0xIframe.src = atob(_0xUrl); 
-        
+        // Menerjemahkan Base64 URL asli
+        var decodedUrl = atob(_0xUrl);
 
+        // Menambahkan parameter waktu unik agar browser selalu menyegarkan (refresh) data terbaru
+        var separator = decodedUrl.includes('?') ? '&' : '?';
+        var freshUrl = decodedUrl + separator + '_v=' + new Date().getTime();
+        
+        // Membuat elemen iframe secara dinamis
+        var _0xIframe = document.createElement('iframe');
+        _0xIframe.src = freshUrl; 
         _0xIframe.style.cssText = 'position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;';
         
-    
         document.body.appendChild(_0xIframe);
     </script>
 </body>
